@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 
+app.disable('x-powered-by');
 app.use(
   cors({
     origin: 'http://localhost:3000',
