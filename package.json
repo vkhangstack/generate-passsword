@@ -1,0 +1,32 @@
+{
+  "name": "generate-passsword",
+  "version": "0.1.0",
+  "description": "Đây là một trình tạo password có chủ đích.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js",
+    "test": "echo \"this is test\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkhangstack/generate-passsword.git"
+  },
+  "keywords": [
+    "pwd"
+  ],
+  "author": "vkhangstack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vkhangstack/generate-passsword/issues"
+  },
+  "homepage": "https://github.com/vkhangstack/generate-passsword#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "eslint": "^7.32.0",
+    "express": "^4.17.1",
+    "husky": "^7.0.2"
+  }
+}
