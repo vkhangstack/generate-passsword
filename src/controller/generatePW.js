@@ -1,7 +1,7 @@
 "use strict";
 const password = require("p4ssw0rd");
 
-const generatePW = async (req, res) => {
+const generatePW = (req, res) => {
   try {
     const input = req.body.password;
     if (!input) return res.send("Invalid password");
@@ -9,7 +9,7 @@ const generatePW = async (req, res) => {
     if (!output) return res.send("Invalid password hash");
     return res.send(output);
   } catch (error) {
-    return throwError(error);
+    return send(error);
   }
 };
 
