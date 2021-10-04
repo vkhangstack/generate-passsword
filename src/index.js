@@ -4,6 +4,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const generatePW = require("./routes/index");
+const expressSanitizer = require("express-sanitizer");
 
 app.disable("x-powered-by");
 app.use(
@@ -12,6 +13,7 @@ app.use(
   }),
 );
 app.use(express.json());
+app.use(expressSanitizer());
 app.use("/", generatePW);
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, (error) => {
