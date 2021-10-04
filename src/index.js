@@ -1,16 +1,20 @@
+'use strict';
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const generatePW = require('./routes/index');
 
 app.disable('x-powered-by');
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: process.env.BASE_URL,
   }),
 );
 app.use(express.json());
-
-app.listen(3000, (error) => {
+app.use('/', generatePW);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, (error) => {
   if (error) throw error;
-  console.info(`Server running on port ${3000}...`);
+  console.log(`Server running on port ${PORT}...`);
 });
