@@ -1,4 +1,4 @@
-name: Build
+name: Generate-password
 on:
   push:
     branches:
