@@ -1,4 +1,5 @@
 "use strict";
+
 const password = require("p4ssw0rd");
 
 const generatePW = (req, res) => {
@@ -9,7 +10,7 @@ const generatePW = (req, res) => {
     if (!output) return res.send("Invalid password hash");
     return res.send(output);
   } catch (error) {
-    return send(error);
+    return res.send(error);
   }
 };
 
