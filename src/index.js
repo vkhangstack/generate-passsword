@@ -3,9 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const generatePW = require("./routes/index");
-const expressSanitizer = require("express-sanitizer");
-const xXssProtection = require("x-xss-protection");
+const router = require("./routes/index");
 
 app.disable("x-powered-by");
 app.use(
@@ -13,10 +11,13 @@ app.use(
     origin: process.env.BASE_URL,
   }),
 );
-app.use(xXssProtection());
+app.set("view engine", "ejs");
+app.set("views", "src/views");
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 app.use(express.json());
-app.use(expressSanitizer());
-app.use("/", generatePW);
+app.use("/api/", router);
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, (error) => {
   if (error) throw error;
