@@ -21,5 +21,4 @@ app.use("/api/", router);
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, (error) => {
   if (error) throw error;
-  console.log(`Server running on port ${PORT}...`);
 });
