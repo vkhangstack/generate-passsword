@@ -31,6 +31,6 @@
     "p4ssw0rd": "^1.0.7"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.20"
   }
 }
